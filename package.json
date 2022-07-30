@@ -1,7 +1,7 @@
 {
   "name": "esnext-starter",
   "version": "0.0.0",
-  "author": "khalamyrenko",
+  "author": "lomazavr",
   "license": "MIT",
   "description": "A light foundation for your next react frontend project based on webpack.",
   "scripts": {
