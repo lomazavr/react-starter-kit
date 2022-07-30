@@ -29,7 +29,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: "babel-loader",
       },
@@ -45,6 +45,7 @@ module.exports = merge(common, {
     ],
   },
   optimization: {
+    // node_modules in separate chunk 
     // runtimeChunk: "single",
     // splitChunks: {
     //   cacheGroups: {

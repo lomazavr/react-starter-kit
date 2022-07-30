@@ -1,6 +1,7 @@
 const Dotenv = require("dotenv-webpack");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const Path = require("path");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const StylelintPlugin = require("stylelint-webpack-plugin");
 const Webpack = require("webpack");
 const common = require("./webpack.common.js");
@@ -34,13 +35,17 @@ module.exports = merge(common, {
     new StylelintPlugin({
       files: Path.join("src", "**/*.s?(a|c)ss"),
     }),
+    new ReactRefreshWebpackPlugin()
   ],
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, "../src"),
         loader: "babel-loader",
+        options: {
+          plugins: [require.resolve("react-refresh/babel")].filter(Boolean),
+        }
       },
       {
         test: /\.s?css$/i,
