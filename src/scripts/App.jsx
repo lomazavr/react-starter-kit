@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../images/logo.svg?url";
 
 const App = () => {
+  console.log("Hello, tag");
   return (
     <>
       <div className="description">
